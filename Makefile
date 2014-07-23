@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -O3
+CFLAGS = -O3 -m64
 NEEDED = gen.o rmo.o file.o analyze.o components.o lifelist.o gen2x2.o
 
 gen:	genmain.o $(NEEDED)

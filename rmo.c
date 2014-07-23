@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <limits.h>
 #include "gen.h"
-#include <malloc.h>
 #include <assert.h>
 
 int combineLists(Cell *list1, int n1, Cell *list2, int n2, Cell *list3) {

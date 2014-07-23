@@ -1,9 +1,9 @@
 /* All code copyright Paul Callahan 1996  (callahan@inf.ethz.ch) */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <limits.h>
 #include "gen.h"
-#include <malloc.h>
 #include <assert.h>
 
 int hexNeighborhood=0; 
@@ -154,7 +154,7 @@ int initTransitionTable() {
 int i;
 FILE *rulefile;
 
-  if (rulefile=fopen("hex.rules", "r")) {
+  if ((rulefile=fopen("hex.rules", "r"))) {
 
      for (i=0; i<13; i++) {
         fscanf(rulefile, "%d%d", hexTable[0]+i, hexTable[1]+i);
@@ -165,7 +165,7 @@ FILE *rulefile;
      initHexNeighborhoodTable();
 
   } else {
-     if (rulefile=fopen("totalistic.rules", "r")) {
+     if ((rulefile=fopen("totalistic.rules", "r"))) {
 
         for (i=0; i<18; i++) {
           fscanf(rulefile, "%d", rules+i);
@@ -179,7 +179,7 @@ FILE *rulefile;
 
   }
 
-  if (rulefile=fopen("exceptions.rules", "r")) {
+  if ((rulefile=fopen("exceptions.rules", "r"))) {
 
      int i, value;
  
@@ -191,6 +191,7 @@ FILE *rulefile;
       fclose(rulefile);
   }
 
+  return 0;
 }
 
 void initNeighborhoodTable() {

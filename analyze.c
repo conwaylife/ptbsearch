@@ -1,7 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <limits.h>
 #include "gen.h"
-#include <malloc.h>
 #include <assert.h>
 
 OscillatorDesc oscillation(LifeList *cells, LifeList *working, int testUpTo) {
@@ -136,7 +136,7 @@ void makeWorkSpace(int n) {
 
 }
 
-initMatchList(PartialOscillatorDesc *osc, int nmatches) {
+void initMatchList(PartialOscillatorDesc *osc, int nmatches) {
 
 int i;
 

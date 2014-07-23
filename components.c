@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <limits.h>
 #include "gen.h"
-#include <malloc.h>
 
 int initLabels(Cell *cells, int n) {
 

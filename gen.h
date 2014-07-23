@@ -351,3 +351,9 @@ int quiescent(LifeList *cells, int stopPeriod, int matchesNeeded,
 void countMoving(int *gliders, int *spaceships);
 
 void outPostScript(LifeList *cells, float cellsize, int spacing);
+
+int uniqCells(Cell *list, int n);
+void intersectLifeLists(LifeList *cells1, LifeList *cells2, int transl);
+int intersectLists(Cell *list1, int n1, Cell *list2, int n2, Cell *list3);
+int restored(LifeList *pattern, LifeList *perturb, int transl, int steps);
+int removeIfEquals(Cell *list, int n, int value);

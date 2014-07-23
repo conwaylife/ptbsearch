@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <limits.h>
 #include "gen.h"
-#include <malloc.h>
 
-main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
 
   static LifeList cells;
   static LifeList matchcells;
@@ -95,5 +94,6 @@ main(int argc, char *argv[]) {
     }
    
   }
+  return 0;
 }
 

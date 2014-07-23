@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <limits.h>
 #include "gen.h"
-#include <malloc.h>
 #include <assert.h>
 
 char out[90000];
@@ -10,7 +9,7 @@ Cell aligns[10000];
 int naligns=0;
 
 LifeList ptb[10000];
-LifeList nb1, nb2, exp, orig;
+LifeList nb1, nb2, orig;
 LifeList tmp;
 
 
@@ -18,7 +17,7 @@ extern Cell *convolution, *scratch1, *scratch2, *oldAlignments;
 void makeWorkSpace(int n);
 
 
-main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
 int i, nconv, nol;
 int gens, thisgen, nptb;
 int iptb;
@@ -27,7 +26,7 @@ int maxgen=50;
 int mingen=0;
 int maxvanish=0;
 
-  if (argc<3) return;
+  if (argc<3) return 1;
 
   readCellsColor(&orig, argv[1], 1);
   nptb=readPatList(ptb, argv[2]); 
